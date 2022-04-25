@@ -1,7 +1,7 @@
 /*
- * Displacement Map Dot Shader
- * implements a basic displacement map on the vertices
- * uses the dot pattern as the map
+ * Simple Vertex 
+ * Simple vertex shader, except that we add the UV coordinate
+ * All we do is pass this to the fragment shader 
  */
 /* number of dots over the UV range */
 uniform float dots;
@@ -13,8 +13,7 @@ uniform float blur;
 /* amount to displace */
 uniform float disp;
 
-// dot pattern function - returns 1 if inside of a dot, 0 if outside of a dot
-// does various forms of anti-aliasing based on the blur parameter
+
 float fdot(vec2 uv) {
     float x = uv.x * dots;
     float y = uv.y * dots;
@@ -50,11 +49,8 @@ varying vec3 v_world_position;
 void main() {
     v_uv = uv;
 
-    // compute the map value (the amount of displacement for the displacement map)
     float d = fdot(uv);
 
-    // displacement map...
-    // we move the position in the direction of the normal
     vec4 world_pos = (modelMatrix * vec4(position + disp * d * normal,1.0));
     v_world_position = world_pos.xyz;
     
@@ -65,9 +61,5 @@ void main() {
     // note - this is in world space, but uses a hack that
     // assumes the model matrix is its own adjoint 
     // (which is true, sometimes)
-    // note: this normal is wrong! we use the normal from the original
-    // object before displacement mapping as a simple approximation to
-    // the resulting normal
-    // actually computing the real normal for the displacement map is hard
     l_normal = (modelMatrix * vec4(normal,0)).xyz;
 }

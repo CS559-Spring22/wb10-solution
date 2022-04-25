@@ -19,7 +19,9 @@
         
         
         
-		<div class="content post__content clearfix"><h2 id="one-way-to-fix-aliasing">One Way to Fix Aliasing</h2>
+		<div class="content post__content clearfix"><div class="dimbox">
+                    <h3>CS559 Spring 2022 Sample Solution</h3>
+                </div><h2 id="one-way-to-fix-aliasing">One Way to Fix Aliasing</h2>
 <p>If you look at the dots on the previous page (repeated below), you&rsquo;ll notice that you can see the pixel boundaries on the texture. Since something either is part of a dot or not, each pixel matters. As the dots get small, this can be ugly. This causes the jagged edges (called &ldquo;jaggies&rdquo; - yes, that&rsquo;s a technical term).</p>
 <p>The problem is that we are making the pixels either light or dark - nothing in between. Even if a pixel is half full of a dot, it has to be either light or dark.</p>
 <p>A different way to look at it: for each pixel, we compute the color at the center and make the entire pixel be that color. Since that point is either inside or outside of the dot, we choose a color for a pixel.</p>

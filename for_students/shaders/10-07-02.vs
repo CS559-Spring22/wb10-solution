@@ -1,5 +1,5 @@
 /*
- * Simple Shader
+ * Simple Shader for exercise 6-2
  * Simplest vertex shader, except that we add the UV coordinate
  * All we do is pass this to the fragment shader
  * 

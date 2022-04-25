@@ -1,5 +1,5 @@
 /* simple fragment shader -
- * makes an object space grating pattern (solid texture)
+ * makes a n object space grating pattern (solid texture)
  */ 
 varying vec3 v_xyz_world;
 varying vec3 v_xyz_local;

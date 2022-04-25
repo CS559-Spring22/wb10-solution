@@ -1,3 +1,8 @@
+/**
+ * CS559 Spring 2022 Example Solution
+ * Written by CS559 course staff
+ */
+
 /*
 * fragment shader for specular lighting exercise
 */
@@ -8,6 +13,7 @@ uniform float shininess;
 // note that this is in WORLD COORDINATES
 const vec3 lightDirWorld = vec3(0,1,0);
 const vec3 baseColor = vec3(1,.8,.4);
+const vec3 whiteColor = vec3(1.0,1.0,1.0);
 
  /* Provided by THREE: (see https://threejs.org/docs/#api/en/renderers/webgl/WebGLProgram)
 uniform vec3 cameraPosition;
@@ -18,7 +24,7 @@ void main()
     // get the view direction in view-space coordinates
     // remember in view space, the camera is the origin
     vec3 viewDir = normalize( - v_position);
-
+    
     // convert the lighting direction in view-space coordinates
     vec3 lightDir = normalize((viewMatrix * vec4(lightDirWorld,0.)).xyz);
     // re-normalize the interpolated normal vector
@@ -28,6 +34,8 @@ void main()
     vec3 reflDir = reflect(-lightDir,normal);
     float alignment = max(dot(viewDir,reflDir),0.);
     // specular highlight color
-    vec3 specular = baseColor * pow(alignment,pow(2.,shininess));
-    gl_FragColor = vec4(specular, 1);
+    vec3 specular = whiteColor * pow(alignment,pow(2.,shininess));
+    // Diffuse light color with the same light direction
+    vec3 diffuse = baseColor * max(0.0, dot(normal, lightDir));
+    gl_FragColor = vec4(clamp(specular + diffuse, 0.0, 1.0), 1);
 }

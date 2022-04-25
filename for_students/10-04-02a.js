@@ -18,7 +18,7 @@ import { shaderMaterial } from "../libs/CS559-Framework/shaderHelper.js";
 
   world.add(new SimpleObjects.GrSphere({ x: -2, y: 1, material: shaderMat }));
   world.add(
-    new SimpleObjects.GrCube({ x: 2, y: 1, size: 1.5, material: shaderMat })
+    new SimpleObjects.GrSquareSign({ x: 2, y: 1, size: 1, material: shaderMat })
   );
 
   world.go();

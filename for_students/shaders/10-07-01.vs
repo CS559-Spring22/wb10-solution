@@ -1,3 +1,7 @@
+/*
+ * Copy of 10-05-02.vs
+ */
+
  /* Provided by THREE: (see https://threejs.org/docs/#api/en/renderers/webgl/WebGLProgram)
 uniform mat4 modelViewMatrix;
 attribute vec3 position;

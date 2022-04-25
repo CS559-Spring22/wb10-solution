@@ -1,9 +1,9 @@
 /*
- * Simple Shader
+ * Simple Shader for exercise 5-4
  * Simplest vertex shader, except that we add the UV coordinate
  * All we do is pass this to the fragment shader
  *
- * You should not need to change this fragment shader,
+ * You should not need to change this fragment shader for exercise 5-4,
  * but you can if you want to.
  */
 

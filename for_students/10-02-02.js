@@ -57,8 +57,8 @@ function spinY(obj, speed = 0) {
   let cubeTime = 0;
   cube2.stepWorld = function (delta, timeofday) {
     cubeTime += delta;
-    let newR = Math.sin(cubeTime / 200) / 2 + 0.5; // get a number between 0-1
-    mat2.uniforms.color.value.x = newR;
+    //let newR = Math.sin(cubeTime / 200) / 2 + 0.5; // get a number between 0-1
+    //mat2.uniforms.color.value.x = newR;
     mat2.uniforms.time.value = cubeTime * 0.001; // pass in the time in seconds
   };
   world.add(cube2);

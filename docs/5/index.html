@@ -19,7 +19,9 @@
         
         
         
-		<div class="content post__content clearfix"><h2 id="the-xyz-texture">The XYZ Texture</h2>
+		<div class="content post__content clearfix"><div class="dimbox">
+                    <h3>CS559 Spring 2022 Sample Solution</h3>
+                </div><h2 id="the-xyz-texture">The XYZ Texture</h2>
 <p>The idea of a texture is that we will compute a different color for each pixel. Since we can run a fragment shader on each pixel, we can do this.</p>
 <p>As with image-based textures, we need to have a good coordinate system. We can use the UV coordinates, or anything else.</p>
 <p>Here are two examples: for one of the spheres below, I&rsquo;ll use the world space XYZ as the texture coordinates, and for the second I&rsquo;ll use the object space XYZ as the texture coordinates. You should be able to tell which is which. For both, I&rsquo;ll convert X into the red channel (in a way that makes it go from 0-1) and Z into the green channel.</p>

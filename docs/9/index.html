@@ -19,7 +19,9 @@
         
         
         
-		<div class="content post__content clearfix"><p>On this page there are 3 exercises: you need to write a shader for each one.</p>
+		<div class="content post__content clearfix"><div class="dimbox">
+                    <h3>CS559 Spring 2022 Sample Solution</h3>
+                </div><p>On this page there are 3 exercises: you need to write a shader for each one.</p>
 <p>Exercises 1 and 2 require some lighting, and 3 recommends it. For the purposes of these exercises, you can assume that the lights are in &ldquo;camera coordinates&rdquo; (if that&rsquo;s easier for you), or use any of the methods we discussed on <a href="../../docs/4/">Page  4  (Lighting in Shaders)</a> (like assuming that transformation is a rotation).</p>
 <p>If you do diffuse lighting, the lighting may change as the camera moves (if the lights move with the camera). It is sufficient to create a single directional light either in the camera direction (0,0,1 in view coordinates), or from above the camera (0,1,0 in view coordinates). It is sufficient to just to diffuse lighting (since it is simple); you may want to add some ambient to it so that the parts facing away from the light are not totally black, or add some specular lighting since you have the implementation of it.</p>
 <p>It should be clear that there is lighting (for the examples that have lighting).</p>

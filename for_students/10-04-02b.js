@@ -1,3 +1,8 @@
+/**
+ * CS559 Spring 2022 Example Solution
+ * Written by CS559 course staff
+ */
+
 /*jshint esversion: 6 */
 // @ts-check
 
@@ -13,12 +18,12 @@ import { shaderMaterial } from "../libs/CS559-Framework/shaderHelper.js";
   let world = new GrWorld({ width: mydiv ? 600 : 800, where: mydiv });
   
   let shaderMat = shaderMaterial("./shaders/10-04-02b.vs", "./shaders/10-04-02b.fs", {
-    side: T.DoubleSide,
+    side: T.FrontSide,
   });
 
   world.add(new SimpleObjects.GrSphere({ x: -2, y: 1, material: shaderMat }));
   world.add(
-    new SimpleObjects.GrCube({ x: 2, y: 1, size: 1.5, material: shaderMat })
+    new SimpleObjects.GrSquareSign({ x: 2, y: 1, size: 1, material: shaderMat })
   );
 
   world.go();

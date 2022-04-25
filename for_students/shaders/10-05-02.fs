@@ -1,3 +1,8 @@
+/**
+ * CS559 Spring 2022 Example Solution
+ * Written by CS559 course staff
+ */
+
 /* a simple procedural texture: dots */
 
 /* pass interpolated variables to from the vertex */
@@ -13,6 +18,8 @@ uniform float dots;
 /* how big are the circles */
 uniform float radius;
 
+const vec3 green = vec3(0.0,1.0,0.0);
+
 void main()
 {
     float x = v_uv.x * dots;
@@ -27,6 +34,7 @@ void main()
     float d = sqrt(dx*dx + dy*dy);
     float dc = step(d,radius);
 
-    gl_FragColor = vec4(mix(light,dark,dc), 1.);
+    // If xc + yc is odd, blue, otherwise, green
+    gl_FragColor = vec4(mix(light,mod(xc + yc,2.0)==0.0?green:dark,dc), 1.);
 }
 
